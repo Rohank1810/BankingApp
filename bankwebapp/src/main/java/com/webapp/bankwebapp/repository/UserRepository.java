@@ -10,4 +10,6 @@ import com.webapp.bankwebapp.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
     public User findByEmail(String email);
+    boolean existsByEmail(String email);
+    
 } 

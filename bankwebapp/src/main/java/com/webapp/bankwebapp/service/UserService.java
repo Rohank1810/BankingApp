@@ -10,4 +10,5 @@ public interface UserService {
     public User addUser(User user);
     public User findByEmail(String email);
     public User getUserProfile(String email);
+    public boolean existByEmail(String email);
 }

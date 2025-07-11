@@ -64,5 +64,14 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    
+    @PostMapping("/existByEmail")
+    public ResponseEntity<Boolean>existByEmail(@RequestBody Map<String,String>data)
+    {
+        String email=data.get("email");
+        boolean res=userService.existByEmail(email);
+        if (res) {
+            return new ResponseEntity<>(true,HttpStatus.OK);
+        }
+        return new ResponseEntity<>(false,HttpStatus.OK);
+    }    
 }
